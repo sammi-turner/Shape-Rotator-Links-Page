@@ -1,4 +1,3 @@
-// WireframeDodecahedron.jsx
 import React, { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Text } from '@react-three/drei'
@@ -48,11 +47,13 @@ function WireframeDodecahedron({ size = 1, linkText, url }) {
         </lineSegments>
       </group>
       <Text
-        position={[0, -1.5, 0]}
-        fontSize={0.2}
+        position={[0, -2.1, 0]}
+        fontSize={0.4}  // Increased font size
         color={hovered ? "yellow" : "white"}
         anchorX="center"
         anchorY="middle"
+        maxWidth={2}  // Added max width to prevent text from extending too far
+        textAlign="center"  // Center align text if it wraps
       >
         {linkText}
       </Text>

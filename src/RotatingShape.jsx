@@ -1,14 +1,10 @@
-// RotatingShape.jsx
 import React, { useRef, useState } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { Text } from '@react-three/drei'
-import * as THREE from 'three'
 
 function RotatingShape({ ShapeComponent, args, linkText, url }) {
   const meshRef = useRef()
-  const textRef = useRef()
   const [hovered, setHovered] = useState(false)
-  const { camera, raycaster, mouse } = useThree()
 
   useFrame((state, delta) => {
     if (meshRef.current) {
@@ -46,12 +42,13 @@ function RotatingShape({ ShapeComponent, args, linkText, url }) {
         <meshBasicMaterial color={hovered ? "yellow" : "white"} wireframe />
       </ShapeComponent>
       <Text
-        ref={textRef}
-        position={[0, -1.5, 0]}
-        fontSize={0.2}
+        position={[0, -2.1, 0]}
+        fontSize={0.4}  // Increased font size
         color={hovered ? "yellow" : "white"}
         anchorX="center"
         anchorY="middle"
+        maxWidth={2}  // Added max width to prevent text from extending too far
+        textAlign="center"  // Center align text if it wraps
       >
         {linkText}
       </Text>
