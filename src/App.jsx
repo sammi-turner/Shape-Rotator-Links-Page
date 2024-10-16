@@ -21,7 +21,7 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <WireframeCube size={1.5} linkText="Cube Link" />
+          <WireframeCube size={1.5} linkText="Cube Link" url="https://en.wikipedia.org/wiki/Cube" />
           <OrbitControls />
         </Canvas>
       </div>
@@ -29,7 +29,7 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <RotatingShape ShapeComponent={Octahedron} args={[1]} linkText="Octahedron Link" />
+          <RotatingShape ShapeComponent={Octahedron} args={[1]} linkText="Octahedron Link" url="https://en.wikipedia.org/wiki/Octahedron" />
           <OrbitControls />
         </Canvas>
       </div>
@@ -37,7 +37,7 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <WireframeDodecahedron size={1} linkText="Dodecahedron Link" />
+          <WireframeDodecahedron size={1} linkText="Dodecahedron Link" url="https://en.wikipedia.org/wiki/Dodecahedron" />
           <OrbitControls />
         </Canvas>
       </div>
@@ -45,7 +45,7 @@ function App() {
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
-          <RotatingShape ShapeComponent={Icosahedron} args={[1, 0]} linkText="Icosahedron Link" />
+          <RotatingShape ShapeComponent={Icosahedron} args={[1, 0]} linkText="Icosahedron Link" url="https://en.wikipedia.org/wiki/Icosahedron" />
           <OrbitControls />
         </Canvas>
       </div>
