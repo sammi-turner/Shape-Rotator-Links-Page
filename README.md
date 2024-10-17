@@ -1,3 +1,5 @@
-# 3D-Links-Page
+<br>
 
-A links page to prove that I'm a shape-rotator and not a wordcel.
+# Shape Rotator Links Page
+
+3D links page using react three fiber and vite.
