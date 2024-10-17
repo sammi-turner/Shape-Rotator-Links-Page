@@ -23,16 +23,16 @@ function App() {
       minHeight: '100vh',
       backgroundColor: 'black',
       overflow: 'auto',
-      paddingBottom: '20px',
-      position: 'absolute', // Add this
-      top: 0,               // Add this
-      left: 0,              // Add this
+      paddingBottom: '2rem',
+      position: 'absolute',
+      top: 0,
+      left: 0,
     }}>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-        gap: '20px',
-        padding: '20px',
+        gap: '2rem',
+        padding: '2rem',
       }}>
         <div style={{ aspectRatio: '1 / 1' }}>
           <ShapeCanvas>
