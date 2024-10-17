@@ -19,18 +19,20 @@ function ShapeCanvas({ children }) {
 function App() {
   return (
     <div style={{
-      width: '100vw',
-      height: '100vh',
+      width: '100%',
+      minHeight: '100vh',
       backgroundColor: 'black',
       overflow: 'auto',
+      paddingBottom: '20px',
+      position: 'absolute', // Add this
+      top: 0,               // Add this
+      left: 0,              // Add this
     }}>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-        gridAutoRows: '1fr',
         gap: '20px',
         padding: '20px',
-        height: '100%',
       }}>
         <div style={{ aspectRatio: '1 / 1' }}>
           <ShapeCanvas>
