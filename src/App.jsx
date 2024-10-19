@@ -4,6 +4,7 @@ import { OrbitControls, Octahedron, Icosahedron } from '@react-three/drei'
 import RotatingShape from './RotatingShape'
 import WireframeCube from './WireframeCube'
 import WireframeDodecahedron from './WireframeDodecahedron'
+import './App.css'
 
 const ShapeCanvas = ({ children }) => {
   return (
@@ -23,33 +24,27 @@ function App() {
       minHeight: '100vh',
       backgroundColor: 'black',
       overflow: 'auto',
-      paddingBottom: '1rem',
       position: 'absolute',
       top: 0,
       left: 0,
     }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
-        gap: '1rem',
-        padding: '1rem',
-      }}>
-        <div style={{ aspectRatio: '1 / 1' }}>
+      <div className="grid-container">
+        <div className="grid-item">
           <ShapeCanvas>
             <WireframeCube size={1.5} linkText="LINKEDIN" url="https://www.linkedin.com/in/sammi-turner" />
           </ShapeCanvas>
         </div>
-        <div style={{ aspectRatio: '1 / 1' }}>
+        <div className="grid-item">
           <ShapeCanvas>
             <RotatingShape ShapeComponent={Octahedron} args={[1]} linkText="DISCORD" url="https://discord.com/users/sammiturner" />
           </ShapeCanvas>
         </div>
-        <div style={{ aspectRatio: '1 / 1' }}>
+        <div className="grid-item">
           <ShapeCanvas>
             <WireframeDodecahedron size={1} linkText="CODEWARS" url="https://www.codewars.com/users/sammi-turner" />
           </ShapeCanvas>
         </div>
-        <div style={{ aspectRatio: '1 / 1' }}>
+        <div className="grid-item">
           <ShapeCanvas>
             <RotatingShape ShapeComponent={Icosahedron} args={[1, 0]} linkText="GITHUB" url="https://github.com/sammi-turner" />
           </ShapeCanvas>
