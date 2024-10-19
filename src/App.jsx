@@ -12,7 +12,11 @@ const ShapeCanvas = ({ children }) => {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       {children}
-      <OrbitControls enableZoom={false} />
+      <OrbitControls 
+        enableRotate={false} 
+        enableZoom={false} 
+        enablePan={false}
+      />
     </Canvas>
   )
 }
