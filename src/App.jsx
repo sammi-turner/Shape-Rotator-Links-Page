@@ -5,7 +5,7 @@ import RotatingShape from './RotatingShape'
 import WireframeCube from './WireframeCube'
 import WireframeDodecahedron from './WireframeDodecahedron'
 
-function ShapeCanvas({ children }) {
+const ShapeCanvas = ({ children }) => {
   return (
     <Canvas camera={{ position: [0, 0, 5] }}>
       <ambientLight intensity={0.5} />
@@ -23,16 +23,16 @@ function App() {
       minHeight: '100vh',
       backgroundColor: 'black',
       overflow: 'auto',
-      paddingBottom: '2rem',
+      paddingBottom: '1rem',
       position: 'absolute',
       top: 0,
       left: 0,
     }}>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-        gap: '2rem',
-        padding: '2rem',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+        gap: '1rem',
+        padding: '1rem',
       }}>
         <div style={{ aspectRatio: '1 / 1' }}>
           <ShapeCanvas>

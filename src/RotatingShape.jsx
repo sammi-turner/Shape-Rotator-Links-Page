@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Text } from '@react-three/drei'
 
-function RotatingShape({ ShapeComponent, args, linkText, url }) {
+const RotatingShape = ({ ShapeComponent, args, linkText, url }) => {
   const meshRef = useRef()
   const [hovered, setHovered] = useState(false)
 
@@ -13,21 +13,12 @@ function RotatingShape({ ShapeComponent, args, linkText, url }) {
     }
   })
 
-  const handleClick = (event) => {
-    event.stopPropagation()
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'default'
+  }, [hovered])
+
+  const handleClick = () => {
     window.open(url, '_blank')
-  }
-
-  const handlePointerOver = (event) => {
-    event.stopPropagation()
-    setHovered(true)
-    document.body.style.cursor = 'pointer'
-  }
-
-  const handlePointerOut = (event) => {
-    event.stopPropagation()
-    setHovered(false)
-    document.body.style.cursor = 'default'
   }
 
   return (
@@ -36,19 +27,19 @@ function RotatingShape({ ShapeComponent, args, linkText, url }) {
         ref={meshRef} 
         args={args}
         onClick={handleClick}
-        onPointerOver={handlePointerOver}
-        onPointerOut={handlePointerOut}
+        onPointerEnter={() => setHovered(true)}
+        onPointerLeave={() => setHovered(false)}
       >
         <meshBasicMaterial color={hovered ? "yellow" : "white"} wireframe />
       </ShapeComponent>
       <Text
         position={[0, -2.1, 0]}
-        fontSize={0.4}  // Increased font size
+        fontSize={0.4}
         color={hovered ? "yellow" : "white"}
         anchorX="center"
         anchorY="middle"
-        maxWidth={2}  // Added max width to prevent text from extending too far
-        textAlign="center"  // Center align text if it wraps
+        maxWidth={2}
+        textAlign="center"
       >
         {linkText}
       </Text>

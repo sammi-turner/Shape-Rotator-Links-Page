@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Text } from '@react-three/drei'
 import * as THREE from 'three'
 
-function WireframeDodecahedron({ size = 1, linkText, url }) {
+const WireframeDodecahedron = ({ size = 1, linkText, url }) => {
   const groupRef = useRef()
   const [hovered, setHovered] = useState(false)
 
@@ -14,21 +14,12 @@ function WireframeDodecahedron({ size = 1, linkText, url }) {
     }
   })
 
-  const handleClick = (event) => {
-    event.stopPropagation()
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'default'
+  }, [hovered])
+
+  const handleClick = () => {
     window.open(url, '_blank')
-  }
-
-  const handlePointerOver = (event) => {
-    event.stopPropagation()
-    setHovered(true)
-    document.body.style.cursor = 'pointer'
-  }
-
-  const handlePointerOut = (event) => {
-    event.stopPropagation()
-    setHovered(false)
-    document.body.style.cursor = 'default'
   }
 
   const dodecahedronGeometry = new THREE.DodecahedronGeometry(size)
@@ -39,8 +30,8 @@ function WireframeDodecahedron({ size = 1, linkText, url }) {
       <group 
         ref={groupRef}
         onClick={handleClick}
-        onPointerOver={handlePointerOver}
-        onPointerOut={handlePointerOut}
+        onPointerEnter={() => setHovered(true)}
+        onPointerLeave={() => setHovered(false)}
       >
         <lineSegments geometry={edges}>
           <lineBasicMaterial color={hovered ? "yellow" : "white"} />
@@ -48,12 +39,12 @@ function WireframeDodecahedron({ size = 1, linkText, url }) {
       </group>
       <Text
         position={[0, -2.1, 0]}
-        fontSize={0.4}  // Increased font size
+        fontSize={0.4}
         color={hovered ? "yellow" : "white"}
         anchorX="center"
         anchorY="middle"
-        maxWidth={2}  // Added max width to prevent text from extending too far
-        textAlign="center"  // Center align text if it wraps
+        maxWidth={2}
+        textAlign="center"
       >
         {linkText}
       </Text>
