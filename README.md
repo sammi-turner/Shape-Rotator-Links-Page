@@ -7,3 +7,23 @@
 https://github.com/user-attachments/assets/55982fd6-88b7-4c3a-9c0a-b4e08f794d26
 
 <br>
+
+## Install node modules
+
+```
+npm i
+```
+
+## Run the dev server
+
+```
+npm run dev
+```
+
+## Build the dist folder for deployment
+
+```
+npm run build
+```
+
+<br>
