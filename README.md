@@ -2,6 +2,8 @@
 
 # Shape Rotator Links Page
 
+<br>
+
 3D links page using react three fiber and vite.
 
 https://github.com/user-attachments/assets/55982fd6-88b7-4c3a-9c0a-b4e08f794d26
@@ -14,11 +16,15 @@ https://github.com/user-attachments/assets/55982fd6-88b7-4c3a-9c0a-b4e08f794d26
 npm i
 ```
 
+<br>
+
 ## Run the dev server
 
 ```
 npm run dev
 ```
+
+<br>
 
 ## Build the dist folder for deployment
 
