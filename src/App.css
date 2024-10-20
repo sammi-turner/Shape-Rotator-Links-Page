@@ -32,6 +32,16 @@
   }
 }
 
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -81,4 +91,3 @@
     max-height: 200px;
   }
 }
-

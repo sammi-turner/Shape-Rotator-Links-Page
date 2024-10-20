@@ -23,15 +23,7 @@ const ShapeCanvas = ({ children }) => {
 
 function App() {
   return (
-    <div style={{
-      width: '100%',
-      minHeight: '100vh',
-      backgroundColor: 'black',
-      overflow: 'auto',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-    }}>
+    <div className="app-container">
       <div className="grid-container">
         <div className="grid-item">
           <ShapeCanvas>
