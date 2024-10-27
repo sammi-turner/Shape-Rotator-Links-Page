@@ -6,7 +6,7 @@ A 3D links page using react three fiber and vite.
 
 <br>
 
-https://github.com/user-attachments/assets/55982fd6-88b7-4c3a-9c0a-b4e08f794d26
+https://github.com/user-attachments/assets/daba21ee-2edf-4233-a129-0e4171035e3b
 
 <br>
 
